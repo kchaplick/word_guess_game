@@ -4,7 +4,7 @@ body{
 
 header{
     width:100%;
-    height: 20%;
+    
 }
 
 .game-logo{
@@ -16,7 +16,7 @@ header{
 .header-text{
     color:#ffffff;
     font-family: 'Amatic SC', cursive;
-    font-size: 200%;
+    font-size: 150%;
     text-align: center;
     margin-top: 0px;
     padding-left: 20px;
@@ -24,15 +24,15 @@ header{
 
 /*Dalek Image containter*/
 .hangman-image-container{
-    width:50%;
-    height:15em;
+    width:75%;
+    height:10em;
     margin: auto;
     background-color: red;
 }
 
 /*Dalek hangman image*/
 .hangman-image{
-    width:50%;
+    width:75%;
     height:0em;
     margin:auto;
     background-image: url("../images/dalekwhole.png");
@@ -43,15 +43,35 @@ header{
 
 }
 
+.game-play-container{
+    border: solid 1px #ffffff;
+    width:75%;
+    margin:auto;
+}
 
+.game-play-container > div{
+    display: inline-block;
+    width: 49%;
+}
 
+.directions{
+    font-family:'Amatic SC', cursive;
+    color:#ffffff;
+    border: solid 1px #ffffff;
+    text-align: center;
+    font-size: 120%;
+    
+}
 
 
 
 .hint-image-container{
-    width: 25%;
+    width: 75%;
+    margin: auto;
+    
 }
 
 .hint-image{
+    margin: auto;
     max-width: 100%;
 }

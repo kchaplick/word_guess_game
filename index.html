@@ -27,23 +27,30 @@
     </div>
 
     <!--Game Play Container-->
-    <div>
+    <div class="game-play-container">
         <!--Directions and counter-->
         <div class="directions">
             <p>Press any button to play!</p>
+            <p>Directions:<br>
+                Use your keyboard to guess the word associated with the image<br>
+                You have 10 wrong guesses before your are EXTERMINATED
+            </p>
+            <p>Guesses Left:</p>
             <p>Wins: </p>
         </div>
 
-        <!--Hint Image-->
-        <div class="hint-image-container">
-            <img class="hint-image" src="assets/images/tardis2-1600x720.jpg">
+        <div class="user-interaction-containter">
+             <!--Hint Image-->
+             <div class="hint-image-container">
+                 <img class="hint-image" src="assets/images/tardis2-1600x720.jpg">
+            </div>
+
+             <!--Word to guess-->
+             <div class="word-to-guess"></div>
+
+             <!--Letters guessed-->
+             <div class="letters-guessed"></div>
         </div>
-
-        <!--Word to guess-->
-        <div class="word-to-guess"></div>
-
-        <!--Letters guessed-->
-        <div class="letters-guessed"></div>
 
     </div>
 </body>
