@@ -2,14 +2,13 @@
 <html lang="en" dir="ltr">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Dr Who Hangman</title>
-  <link rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
- 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dr Who Hangman</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
 </head>
 
 <body>
@@ -27,7 +26,24 @@
 
     <!--Game Play Container-->
     <div>
+        <!--Directions and counter-->
+        <div class="directions">
+            <p>Press any button to play!</p>
+            <p>Wins: </p>
+        </div>
+
+        <!--Hint Image-->
+        <div class="hint-image-container">
+            <img src="assets/images/tardis2-1600x720.jpg">
+        </div>
+
+        <!--Word to guess-->
+        <div class="word-to-guess"></div>
+
+        <!--Letters guessed-->
+        <div class="letters-guessed"></div>
 
     </div>
-</body>    
+</body>
+
 </html>
