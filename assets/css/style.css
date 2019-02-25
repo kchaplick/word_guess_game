@@ -54,15 +54,18 @@ header{
     width: 49%;
 }
 
+.user-interaction-containter{
+    border-left: solid 1px #ffffff;
+}
+
 .directions{
     font-family:'Amatic SC', cursive;
     color:#ffffff;
-    border: solid 1px #ffffff;
+    
     text-align: center;
     font-size: 120%;
     
 }
-
 
 
 .hint-image-container{
@@ -74,4 +77,23 @@ header{
 .hint-image{
     margin: auto;
     max-width: 100%;
+}
+
+.word-to-guess{
+    margin: auto;
+    text-align:center;
+}
+.set-underscore{
+    color:#ffffff;
+    font-size: 170%;
+    display: inline-block;
+    padding-right:10px;
+    margin: auto;
+}
+
+.letters-guessed{
+    color:#ffffff;
+    font-family: 'Amatic SC', cursive;
+    text-align: center;
+    font-size: 150%
 }

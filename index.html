@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Dr Who Hangman</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
@@ -42,17 +44,20 @@
         <div class="user-interaction-containter">
              <!--Hint Image-->
              <div class="hint-image-container">
-                 <img class="hint-image" src="assets/images/tardis2-1600x720.jpg">
+                 <img class="hint-image" src="assets/images/alldoctors.jpg">
             </div>
 
              <!--Word to guess-->
              <div class="word-to-guess"></div>
 
              <!--Letters guessed-->
-             <div class="letters-guessed"></div>
+             <div class="wrong-guesses"></div>
+             <p class="letters-guessed">Letters Guessed</p>
         </div>
 
     </div>
+    <script src="assets/javascript/game.js"></script>
+
 </body>
 
 </html>
