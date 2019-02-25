@@ -27,18 +27,14 @@ header{
     width:75%;
     height:10em;
     margin: auto;
-    background-color: red;
+    
 }
 
 /*Dalek hangman image*/
 .hangman-image{
-    width:75%;
-    height:0em;
+    width:auto;
+    height:10em;
     margin:auto;
-    background-image: url("../images/dalekwhole.png");
-    background-position: bottom;
-    background-size:50%;
-    background-repeat: no-repeat;
     background-color: #000000;
 
 }

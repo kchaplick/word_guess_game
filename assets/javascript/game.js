@@ -6,7 +6,7 @@ var guessMe = [
     },
     {
         name: "ROSE",
-        url: "assets/images/rose.jpg"
+        url: "assets/images/rose.jpeg"
     },
     {
         name: "ANGEL",
@@ -29,63 +29,84 @@ var guessMe = [
 
 $(document).ready(function () {
 
+    var playGame = 0;
+    var badGuesses = [];
+    var wins = 0;
+    var guesses = 10;
 
     //Create an key up event to display hint image and word
     $(document).keyup(function (e) {
         if (e.keyCode == 13) {
 
-
+         function gameSetup(){
+            $(".replacement").remove()
+            $(".set-underscore").remove()
+            $(".wrong-letters").remove()
+         $("#wins").html(wins);    
         //Display new image
         var hintImage = document.getElementsByClassName("hint-image")[0];
-        hintImage.setAttribute('src', guessMe[0].url);
+        hintImage.setAttribute('src', guessMe[playGame].url);
 
         //display underscores matching word length
         //returns character length of name of object
-        var guessMeLength = guessMe[0].name.length;
+        var guessMeLength = guessMe[playGame].name.length;
         
 
         for (i = 0; i < guessMeLength; i++) {
             var underscore = $("<div>" + "_" + "</div>");
             underscore.addClass("set-underscore");
-            underscore.attr("data-letter", guessMe[0].name.charAt(i));
+            underscore.attr("data-letter", guessMe[playGame].name.charAt(i));
             $(".word-to-guess").append(underscore);
         }
-
+        badGuesses = [0];
+        guesses = 10;
+        $("#guesses").html(guesses);
+        
         //Create on key up event to display user guess 
-            
+        
+        }   
+        gameSetup()
+                
                 //gets the key that is pressed
                 $(document).keydown(function(event) {
                     var keyPressed = (String.fromCharCode(event.which));
-                    var 
+                    var isHit = false;
+                    
                 //if statement logic  
                     //if keypressed is equal to letter in word replace with letter
                     $(".set-underscore").each(function(){
                         if($(this).data("letter") == keyPressed){
+                            isHit = true;
                             $(this).replaceWith("<div class='replacement'>" + keyPressed + "</div>");
                         }
                      
                       })
                      //if key pressed is not equal to letter in word
-                      $(".set-underscore").each(function(){
-                        if($(this).data("letter") !== keyPressed){
-                            $(this).replaceWith("<div class='replacement'>" + keyPressed + "</div>");
+                      if (isHit !== true && ($.inArray(keyPressed,badGuesses)==-1)){
+                          var userGuess = $("<div class='wrong-letters'>" + keyPressed + "</div>");
+                          $(".wrong-guesses").append(userGuess);
+                          badGuesses.push(keyPressed);
+                          guesses--;
+                          $("#guesses").html(guesses);
+                          if(guesses == 0){
+                              alert("You Lose");
+                              playGame = 0;
+                              gameSetup()
+                          }
+                          console.log(badGuesses);
+                      }
+                      //Win or loss actions
+                        if ($(".set-underscore").length == 0){
+                            wins++;
+                            
+                            
+                            playGame++;
+                            gameSetup();
                         }
-                     
-                      })
-                      
-
-               
-                //console.log(userGuess)
-                });
+                });       
            
 
-        //display letter if it matches word
-
-        //display letter if it doesn't match word
-
-        //display piece of dalek if it doesn't match
-
-        //Win or loss actions
+        
 
         //If user losses play Exterminate sound
 
