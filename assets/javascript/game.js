@@ -31,7 +31,8 @@ $(document).ready(function () {
 
 
     //Create an key up event to display hint image and word
-    $(document).on("click", function () {
+    $(document).keyup(function (e) {
+        if (e.keyCode == 13) {
 
 
         //Display new image
@@ -41,7 +42,7 @@ $(document).ready(function () {
         //display underscores matching word length
         //returns character length of name of object
         var guessMeLength = guessMe[0].name.length;
-        console.log(guessMeLength);
+        
 
         for (i = 0; i < guessMeLength; i++) {
             var underscore = $("<div>" + "_" + "</div>");
@@ -51,22 +52,32 @@ $(document).ready(function () {
         }
 
         //Create on key up event to display user guess 
-            $(document).on("keyup",function (){
+            
                 //gets the key that is pressed
                 $(document).keydown(function(event) {
                     var keyPressed = (String.fromCharCode(event.which));
-                
+                    var 
                 //if statement logic  
                     //if keypressed is equal to letter in word replace with letter
-                    if (keyPressed === $('.set-underscore').attr("data-letter")){
-                    
-                    }
+                    $(".set-underscore").each(function(){
+                        if($(this).data("letter") == keyPressed){
+                            $(this).replaceWith("<div class='replacement'>" + keyPressed + "</div>");
+                        }
+                     
+                      })
+                     //if key pressed is not equal to letter in word
+                      $(".set-underscore").each(function(){
+                        if($(this).data("letter") !== keyPressed){
+                            $(this).replaceWith("<div class='replacement'>" + keyPressed + "</div>");
+                        }
+                     
+                      })
+                      
 
-                var userGuess = $("<div class='letters-guessed'>" + keyPressed + "</div>" );   
-                $(".wrong-guesses").append(userGuess);
-                console.log(userGuess)
+               
+                //console.log(userGuess)
                 });
-            })
+           
 
         //display letter if it matches word
 
@@ -83,12 +94,14 @@ $(document).ready(function () {
         //If user wins display next word and picture
 
 
-    })
+    }
 
 
 
 
-})
+});
+
+});
 
 
 
